@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.1.0",
+  "iOS" : [
+    {
+      "hash" : "7a1b082ecd30058bbfe6ea855522c9d65918f20e0fb880fe1195ef90aa3a2ac3",
+      "name" : "Cartography"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class PublicReposCollectionViewController: UICollectionViewController {
+final class PublicReposCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,4 +91,10 @@ class PublicReposCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension PublicReposCollectionViewController: StoryboardInstantiatiable {
+    static let storyboardName: String = "Main"
+    static let storyboardIdentifier: String? = "PublicReposCollectionViewController"
+    static let storyboardBundle: Bundle? = nil
 }

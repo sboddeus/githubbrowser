@@ -22,6 +22,10 @@
 		266B6B441F3F42A900E2A20D /* PublicReposCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B431F3F42A900E2A20D /* PublicReposCollectionViewController.swift */; };
 		266B6B461F3F42C600E2A20D /* RepoDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B451F3F42C600E2A20D /* RepoDetailCollectionViewController.swift */; };
 		266B6B481F405CFB00E2A20D /* CoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B471F405CFB00E2A20D /* CoreCoordinator.swift */; };
+		266B6B4B1F405EEF00E2A20D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B4A1F405EEF00E2A20D /* Coordinator.swift */; };
+		266B6B4D1F40663600E2A20D /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */; };
+		266B6B4F1F40684E00E2A20D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B4E1F40684E00E2A20D /* Cartography.framework */; };
+		266B6B521F40711900E2A20D /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		266B6B431F3F42A900E2A20D /* PublicReposCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicReposCollectionViewController.swift; path = ViewControllers/PublicReposCollectionViewController.swift; sourceTree = "<group>"; };
 		266B6B451F3F42C600E2A20D /* RepoDetailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		266B6B471F405CFB00E2A20D /* CoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreCoordinator.swift; path = Coordinators/CoreCoordinator.swift; sourceTree = "<group>"; };
+		266B6B4A1F405EEF00E2A20D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Coordinators/Coordinator.swift; sourceTree = "<group>"; };
+		266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootContainerViewController.swift; path = ViewControllers/RootContainerViewController.swift; sourceTree = "<group>"; };
+		266B6B4E1F40684E00E2A20D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
+		266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardInstantiable.swift; path = ViewControllers/StoryboardInstantiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,7 @@
 				266B6B361F3EF63500E2A20D /* Alamofire.framework in Frameworks */,
 				266B6B371F3EF63500E2A20D /* Himotoki.framework in Frameworks */,
 				266B6B381F3EF63500E2A20D /* SDWebImage.framework in Frameworks */,
+				266B6B4F1F40684E00E2A20D /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +159,7 @@
 		266B6B321F3EF63400E2A20D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				266B6B4E1F40684E00E2A20D /* Cartography.framework */,
 				266B6B331F3EF63500E2A20D /* Alamofire.framework */,
 				266B6B341F3EF63500E2A20D /* Himotoki.framework */,
 				266B6B351F3EF63500E2A20D /* SDWebImage.framework */,
@@ -180,6 +190,8 @@
 			children = (
 				266B6B431F3F42A900E2A20D /* PublicReposCollectionViewController.swift */,
 				266B6B451F3F42C600E2A20D /* RepoDetailCollectionViewController.swift */,
+				266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */,
+				266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				266B6B471F405CFB00E2A20D /* CoreCoordinator.swift */,
+				266B6B4A1F405EEF00E2A20D /* Coordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -335,11 +348,13 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Himotoki.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cartography.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,9 +367,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266B6B4B1F405EEF00E2A20D /* Coordinator.swift in Sources */,
 				266B6B481F405CFB00E2A20D /* CoreCoordinator.swift in Sources */,
+				266B6B521F40711900E2A20D /* StoryboardInstantiable.swift in Sources */,
 				266B6B3B1F3F39A700E2A20D /* RepoViewModel.swift in Sources */,
 				266B6B411F3F41CA00E2A20D /* RepoDescriptionViewModel.swift in Sources */,
+				266B6B4D1F40663600E2A20D /* RootContainerViewController.swift in Sources */,
 				266B6B461F3F42C600E2A20D /* RepoDetailCollectionViewController.swift in Sources */,
 				266B6B3E1F3F39D000E2A20D /* RepoPreviewCellViewModel.swift in Sources */,
 				266B6B441F3F42A900E2A20D /* PublicReposCollectionViewController.swift in Sources */,

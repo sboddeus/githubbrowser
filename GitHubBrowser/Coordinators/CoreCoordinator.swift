@@ -6,4 +6,24 @@
 //  Copyright © 2017 Boddeus. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class CoreCoordinator: Coordinator {
+    fileprivate var rootContainerViewController: RootContainerViewController!
+
+    func start(window: UIWindow, application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) {
+        guard let rootContainerViewController = window.rootViewController as? RootContainerViewController else {
+            fatalError("App doesn't have a root container view controller")
+        }
+        self.rootContainerViewController = rootContainerViewController
+
+        showPublicRepos()
+    }
+
+    private func showPublicRepos() {
+        let vc = PublicReposCollectionViewController.makeController()
+
+        rootContainerViewController.show(viewController: vc)
+    }
+
+}
