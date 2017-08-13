@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire"
+github "rs/SDWebImage"
+github "ikesyo/Himotoki"
+github "Quick/Quick"
+github "Quick/Nimble"
