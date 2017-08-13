@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMC-vf-Lbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-672" y="132"/>
+            <point key="canvasLocation" x="-881" y="142"/>
         </scene>
         <!--Public Repos Collection View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -38,21 +38,10 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UICollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                     </view>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="adv-rF-dLe" id="HAF-Lt-Yzv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="adv-rF-dLe">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="s3f-n3-fWO"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="42h-ha-NcS"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="kIa-Bh-O3G"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="hkq-LG-Ln0"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
@@ -72,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bu-hp-6Dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="141.67916041979012"/>
+            <point key="canvasLocation" x="1116" y="142"/>
         </scene>
     </scenes>
 </document>

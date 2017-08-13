@@ -26,6 +26,14 @@
 		266B6B4D1F40663600E2A20D /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */; };
 		266B6B4F1F40684E00E2A20D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B4E1F40684E00E2A20D /* Cartography.framework */; };
 		266B6B521F40711900E2A20D /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */; };
+		266B6B551F40799900E2A20D /* GitHubDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B541F40799900E2A20D /* GitHubDataSource.swift */; };
+		266B6B5A1F407D2500E2A20D /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B591F407D2500E2A20D /* Repo.swift */; };
+		266B6B651F40A6FF00E2A20D /* RepoNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B631F40A6FF00E2A20D /* RepoNameCollectionViewCell.swift */; };
+		266B6B661F40A6FF00E2A20D /* RepoNameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B641F40A6FF00E2A20D /* RepoNameCollectionViewCell.xib */; };
+		266B6B691F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */; };
+		266B6B6A1F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */; };
+		266B6B6F1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */; };
+		266B6B701F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +79,14 @@
 		266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootContainerViewController.swift; path = ViewControllers/RootContainerViewController.swift; sourceTree = "<group>"; };
 		266B6B4E1F40684E00E2A20D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardInstantiable.swift; path = ViewControllers/StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		266B6B541F40799900E2A20D /* GitHubDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubDataSource.swift; path = DataSources/GitHubDataSource.swift; sourceTree = "<group>"; };
+		266B6B591F407D2500E2A20D /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repo.swift; path = Models/Repo.swift; sourceTree = "<group>"; };
+		266B6B631F40A6FF00E2A20D /* RepoNameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoNameCollectionViewCell.swift; path = ViewControllers/Cells/RepoNameCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B641F40A6FF00E2A20D /* RepoNameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoNameCollectionViewCell.xib; path = ViewControllers/Cells/RepoNameCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoHeaderCollectionViewCell.swift; path = ViewControllers/Cells/RepoHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoHeaderCollectionViewCell.xib; path = ViewControllers/Cells/RepoHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoSearchCollectionViewCell.swift; path = ViewControllers/Cells/RepoSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoSearchCollectionViewCell.xib; path = ViewControllers/Cells/RepoSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				266B6B491F405D0100E2A20D /* Coordinators */,
+				266B6B561F40799F00E2A20D /* Data Sources */,
+				266B6B5B1F407D6800E2A20D /* Models */,
+				266B6B531F4075CA00E2A20D /* Protocols */,
 				266B6B421F3F41D400E2A20D /* Views */,
 				266B6B3C1F3F39AE00E2A20D /* View Models */,
 				266B6B041F3EF20600E2A20D /* AppDelegate.swift */,
@@ -191,7 +210,7 @@
 				266B6B431F3F42A900E2A20D /* PublicReposCollectionViewController.swift */,
 				266B6B451F3F42C600E2A20D /* RepoDetailCollectionViewController.swift */,
 				266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */,
-				266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */,
+				266B6B621F4092B800E2A20D /* Cells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -203,6 +222,43 @@
 				266B6B4A1F405EEF00E2A20D /* Coordinator.swift */,
 			);
 			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		266B6B531F4075CA00E2A20D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B511F40711900E2A20D /* StoryboardInstantiable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		266B6B561F40799F00E2A20D /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B541F40799900E2A20D /* GitHubDataSource.swift */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		266B6B5B1F407D6800E2A20D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B591F407D2500E2A20D /* Repo.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		266B6B621F4092B800E2A20D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B631F40A6FF00E2A20D /* RepoNameCollectionViewCell.swift */,
+				266B6B641F40A6FF00E2A20D /* RepoNameCollectionViewCell.xib */,
+				266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */,
+				266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */,
+				266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */,
+				266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,8 +372,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266B6B6A1F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib in Resources */,
 				266B6B0F1F3EF20600E2A20D /* LaunchScreen.storyboard in Resources */,
+				266B6B661F40A6FF00E2A20D /* RepoNameCollectionViewCell.xib in Resources */,
 				266B6B0C1F3EF20600E2A20D /* Assets.xcassets in Resources */,
+				266B6B701F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib in Resources */,
 				266B6B0A1F3EF20600E2A20D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,15 +427,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				266B6B4B1F405EEF00E2A20D /* Coordinator.swift in Sources */,
+				266B6B5A1F407D2500E2A20D /* Repo.swift in Sources */,
 				266B6B481F405CFB00E2A20D /* CoreCoordinator.swift in Sources */,
 				266B6B521F40711900E2A20D /* StoryboardInstantiable.swift in Sources */,
 				266B6B3B1F3F39A700E2A20D /* RepoViewModel.swift in Sources */,
 				266B6B411F3F41CA00E2A20D /* RepoDescriptionViewModel.swift in Sources */,
 				266B6B4D1F40663600E2A20D /* RootContainerViewController.swift in Sources */,
+				266B6B651F40A6FF00E2A20D /* RepoNameCollectionViewCell.swift in Sources */,
 				266B6B461F3F42C600E2A20D /* RepoDetailCollectionViewController.swift in Sources */,
+				266B6B691F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift in Sources */,
+				266B6B6F1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift in Sources */,
 				266B6B3E1F3F39D000E2A20D /* RepoPreviewCellViewModel.swift in Sources */,
 				266B6B441F3F42A900E2A20D /* PublicReposCollectionViewController.swift in Sources */,
 				266B6B051F3EF20600E2A20D /* AppDelegate.swift in Sources */,
+				266B6B551F40799900E2A20D /* GitHubDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

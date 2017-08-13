@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class RepoDetailCollectionViewController: UICollectionViewController {
+final class RepoDetailCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,17 @@ class RepoDetailCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    var viewModel: RepoDescriptionViewModel? = nil {
+        didSet {
+            guard isViewLoaded else { return }
+            setupBindings()
+        }
+    }
+
+    private func setupBindings() {
+        collectionView?.reloadData()
     }
 
     /*
@@ -91,4 +102,10 @@ class RepoDetailCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension RepoDetailCollectionViewController: StoryboardInstantiatiable {
+    static let storyboardName: String = "Main"
+    static let storyboardIdentifier: String? = "RepoDetailCollectionViewController"
+    static let storyboardBundle: Bundle? = nil
 }

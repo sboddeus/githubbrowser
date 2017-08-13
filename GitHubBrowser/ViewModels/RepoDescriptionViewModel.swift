@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct RepoDescriptionViewModel {
+    private let dataSource: RepoDataSource
+
+    init(dataSource: RepoDataSource) {
+        self.dataSource = dataSource
+    }
+}

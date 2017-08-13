@@ -8,20 +8,36 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+enum PublicRepoCellIdentifier: String {
+    case header
+    case search
+    case repo
+}
 
 final class PublicReposCollectionViewController: UICollectionViewController {
+
+    private lazy var flowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 0.0
+        flowLayout.minimumLineSpacing = 0.0
+        flowLayout.sectionHeadersPinToVisibleBounds = true
+
+        return flowLayout
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
+        collectionView?.collectionViewLayout = flowLayout
+        registerCells()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel?.load { [weak self] in
+            self?.setupBindings()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,68 +45,95 @@ final class PublicReposCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    var viewModel: RepoViewModel? = nil {
+        didSet {
+            guard isViewLoaded else { return }
+            viewModel?.load { [weak self] in
+                self?.setupBindings()
+            }
+        }
     }
-    */
+
+    private func setupBindings() {
+        collectionView?.reloadSections([RepoSection.repos.rawValue])
+    }
 
     // MARK: UICollectionViewDataSource
 
+    enum RepoSection: Int {
+        case header = 0
+        case search = 1
+        case repos = 2
+    }
+
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        switch RepoSection(rawValue: section)! {
+        case .repos:
+            return viewModel?.repoViewModels?.count ?? 0
+        default:
+            return 1
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        switch RepoSection(rawValue: indexPath.section)! {
+        case .header:
+            return headerCell(collectionView: collectionView, indexPath: indexPath)
+        case .search:
+            return searchCell(collectionView: collectionView, indexPath: indexPath)
+        case .repos:
+            return repoCell(collectionView: collectionView, indexPath: indexPath)
+        }
+    }
+
+    // Helpers
+
+    private func registerCells() {
+        collectionView?.register(UINib(nibName: "RepoNameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.repo.rawValue)
+        collectionView?.register(UINib(nibName: "RepoHeaderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.header.rawValue)
+        collectionView?.register(UINib(nibName: "RepoSearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.search.rawValue)
+    }
+
+    private func headerCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: PublicRepoCellIdentifier.header.rawValue, for: indexPath)
+    }
+
+    private func searchCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PublicRepoCellIdentifier.search.rawValue, for: indexPath)
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 8.0
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    private func repoCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PublicRepoCellIdentifier.repo.rawValue, for: indexPath)
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+        guard let repoCell = cell as? RepoNameCollectionViewCell else { return cell }
+
+        repoCell.repoPreviewViewModel = viewModel?.repoViewModels?[indexPath.item]
+
+        return repoCell
     }
-    */
+    // MARK: UICollectionViewDelegate
 
     /*
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
+*/
 
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
+}
+
+extension PublicReposCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 80)
     }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 extension PublicReposCollectionViewController: StoryboardInstantiatiable {

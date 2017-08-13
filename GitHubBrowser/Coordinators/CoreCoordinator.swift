@@ -22,6 +22,7 @@ final class CoreCoordinator: Coordinator {
 
     private func showPublicRepos() {
         let vc = PublicReposCollectionViewController.makeController()
+        vc.viewModel = RepoViewModel(dataSource: GitHubRepoDataSource())
 
         rootContainerViewController.show(viewController: vc)
     }

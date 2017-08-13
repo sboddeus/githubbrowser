@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+struct RepoPreviewCellViewModel {
+    private let repo: Repo
+
+    init(repo: Repo) {
+        self.repo = repo
+    }
+
+    var name: String? {
+        get {
+            return repo.name
+        }
+    }
+}
