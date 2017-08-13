@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RepoForkCollectionViewCell" customModule="GitHubBrowser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="254" height="55"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="254" height="55"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkj-rn-9B2">
+                        <rect key="frame" x="8" y="0.0" width="236" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbk-8B-0kG">
+                        <rect key="frame" x="9" y="26" width="236" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Mbk-8B-0kG" secondAttribute="bottom" constant="8" id="GHZ-R6-Cfc"/>
+                <constraint firstItem="mkj-rn-9B2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MFy-Aq-8Oz"/>
+                <constraint firstAttribute="trailing" secondItem="Mbk-8B-0kG" secondAttribute="trailing" constant="9" id="Qtr-gp-KTb"/>
+                <constraint firstAttribute="trailing" secondItem="mkj-rn-9B2" secondAttribute="trailing" constant="10" id="aoV-yH-bDf"/>
+                <constraint firstItem="Mbk-8B-0kG" firstAttribute="top" secondItem="mkj-rn-9B2" secondAttribute="bottom" constant="5" id="bug-nf-tes"/>
+                <constraint firstItem="Mbk-8B-0kG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="jYT-uV-PeR"/>
+                <constraint firstItem="mkj-rn-9B2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="wjX-5U-VTn"/>
+            </constraints>
+            <size key="customSize" width="254" height="55"/>
+            <connections>
+                <outlet property="forkCountLabel" destination="Mbk-8B-0kG" id="Rrj-Jo-z1A"/>
+                <outlet property="forkLabel" destination="mkj-rn-9B2" id="7tb-f5-fAP"/>
+            </connections>
+            <point key="canvasLocation" x="0.0" y="46.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

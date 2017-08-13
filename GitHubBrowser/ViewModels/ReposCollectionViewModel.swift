@@ -25,7 +25,7 @@ class ReposCollectionViewModel {
 
     func detailViewModel(itemIndex: Int) -> RepoDetailViewModel? {
         if let repo = repos?[itemIndex] {
-            return RepoDetailViewModel(repo: repo)
+            return RepoDetailViewModel(repo: repo, dataSource: dataSource)
         }
 
         return nil

@@ -41,6 +41,16 @@
 		266B6B821F40F21800E2A20D /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266B6B801F40F21800E2A20D /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		266B6B831F40F21800E2A20D /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266B6B811F40F21800E2A20D /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		266B6B851F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B841F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift */; };
+		266B6B881F41051D00E2A20D /* RepoDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B871F41051D00E2A20D /* RepoDetailed.swift */; };
+		266B6B8C1F410F0C00E2A20D /* RepoForkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B8A1F410F0C00E2A20D /* RepoForkCollectionViewCell.swift */; };
+		266B6B8D1F410F0C00E2A20D /* RepoForkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B8B1F410F0C00E2A20D /* RepoForkCollectionViewCell.xib */; };
+		266B6B911F410F3A00E2A20D /* RepoNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B8F1F410F3A00E2A20D /* RepoNameCollectionViewCell.swift */; };
+		266B6B921F410F3A00E2A20D /* RepoNameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B901F410F3A00E2A20D /* RepoNameCollectionViewCell.xib */; };
+		266B6B951F410F5D00E2A20D /* RepoOwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B931F410F5D00E2A20D /* RepoOwnerCollectionViewCell.swift */; };
+		266B6B961F410F5D00E2A20D /* RepoOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B941F410F5D00E2A20D /* RepoOwnerCollectionViewCell.xib */; };
+		266B6B991F410FA300E2A20D /* RepoCountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B971F410FA300E2A20D /* RepoCountsCollectionViewCell.swift */; };
+		266B6B9A1F410FA300E2A20D /* RepoCountsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B981F410FA300E2A20D /* RepoCountsCollectionViewCell.xib */; };
+		266B6B9C1F4116F200E2A20D /* RepoDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B9B1F4116F200E2A20D /* RepoDetailCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +127,16 @@
 		266B6B801F40F21800E2A20D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		266B6B811F40F21800E2A20D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		266B6B841F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoPreviewCellViewModelTests.swift; sourceTree = "<group>"; };
+		266B6B871F41051D00E2A20D /* RepoDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailed.swift; path = Models/RepoDetailed.swift; sourceTree = "<group>"; };
+		266B6B8A1F410F0C00E2A20D /* RepoForkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoForkCollectionViewCell.swift; path = ViewControllers/Cells/RepoForkCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B8B1F410F0C00E2A20D /* RepoForkCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoForkCollectionViewCell.xib; path = ViewControllers/Cells/RepoForkCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B8F1F410F3A00E2A20D /* RepoNameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoNameCollectionViewCell.swift; path = ViewControllers/Cells/RepoNameCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B901F410F3A00E2A20D /* RepoNameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoNameCollectionViewCell.xib; path = ViewControllers/Cells/RepoNameCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B931F410F5D00E2A20D /* RepoOwnerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoOwnerCollectionViewCell.swift; path = ViewControllers/Cells/RepoOwnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B941F410F5D00E2A20D /* RepoOwnerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoOwnerCollectionViewCell.xib; path = ViewControllers/Cells/RepoOwnerCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B971F410FA300E2A20D /* RepoCountsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoCountsCollectionViewCell.swift; path = ViewControllers/Cells/RepoCountsCollectionViewCell.swift; sourceTree = "<group>"; };
+		266B6B981F410FA300E2A20D /* RepoCountsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoCountsCollectionViewCell.xib; path = ViewControllers/Cells/RepoCountsCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B9B1F4116F200E2A20D /* RepoDetailCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailCellViewModel.swift; path = ViewModels/RepoDetailCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				266B6B3F1F3F39D700E2A20D /* Public Repos */,
-				266B6B401F3F41CA00E2A20D /* RepoDetailViewModel.swift */,
+				266B6B9D1F41184F00E2A20D /* Detailed Repo */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -247,10 +267,11 @@
 		266B6B421F3F41D400E2A20D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				266B6B431F3F42A900E2A20D /* ReposCollectionViewController.swift */,
-				266B6B451F3F42C600E2A20D /* RepoDetailCollectionViewController.swift */,
+				266B6B861F41039100E2A20D /* ReposCollection */,
+				266B6B891F410CC700E2A20D /* RepoDetailCollection */,
 				266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */,
-				266B6B621F4092B800E2A20D /* Cells */,
+				266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */,
+				266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -285,6 +306,7 @@
 			children = (
 				266B6B591F407D2500E2A20D /* Repo.swift */,
 				266B6B711F40D85600E2A20D /* Owner.swift */,
+				266B6B871F41051D00E2A20D /* RepoDetailed.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -294,12 +316,52 @@
 			children = (
 				266B6B631F40A6FF00E2A20D /* RepoPreviewCollectionViewCell.swift */,
 				266B6B641F40A6FF00E2A20D /* RepoPreviewCollectionViewCell.xib */,
-				266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */,
-				266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */,
 				266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */,
 				266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		266B6B861F41039100E2A20D /* ReposCollection */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B431F3F42A900E2A20D /* ReposCollectionViewController.swift */,
+				266B6B621F4092B800E2A20D /* Cells */,
+			);
+			name = ReposCollection;
+			sourceTree = "<group>";
+		};
+		266B6B891F410CC700E2A20D /* RepoDetailCollection */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B451F3F42C600E2A20D /* RepoDetailCollectionViewController.swift */,
+				266B6B8E1F410F1600E2A20D /* Cells */,
+			);
+			name = RepoDetailCollection;
+			sourceTree = "<group>";
+		};
+		266B6B8E1F410F1600E2A20D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B8A1F410F0C00E2A20D /* RepoForkCollectionViewCell.swift */,
+				266B6B8B1F410F0C00E2A20D /* RepoForkCollectionViewCell.xib */,
+				266B6B8F1F410F3A00E2A20D /* RepoNameCollectionViewCell.swift */,
+				266B6B901F410F3A00E2A20D /* RepoNameCollectionViewCell.xib */,
+				266B6B931F410F5D00E2A20D /* RepoOwnerCollectionViewCell.swift */,
+				266B6B941F410F5D00E2A20D /* RepoOwnerCollectionViewCell.xib */,
+				266B6B971F410FA300E2A20D /* RepoCountsCollectionViewCell.swift */,
+				266B6B981F410FA300E2A20D /* RepoCountsCollectionViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		266B6B9D1F41184F00E2A20D /* Detailed Repo */ = {
+			isa = PBXGroup;
+			children = (
+				266B6B401F3F41CA00E2A20D /* RepoDetailViewModel.swift */,
+				266B6B9B1F4116F200E2A20D /* RepoDetailCellViewModel.swift */,
+			);
+			name = "Detailed Repo";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,9 +479,13 @@
 				266B6B6A1F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib in Resources */,
 				266B6B0F1F3EF20600E2A20D /* LaunchScreen.storyboard in Resources */,
 				266B6B661F40A6FF00E2A20D /* RepoPreviewCollectionViewCell.xib in Resources */,
+				266B6B961F410F5D00E2A20D /* RepoOwnerCollectionViewCell.xib in Resources */,
+				266B6B9A1F410FA300E2A20D /* RepoCountsCollectionViewCell.xib in Resources */,
 				266B6B0C1F3EF20600E2A20D /* Assets.xcassets in Resources */,
 				266B6B701F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib in Resources */,
+				266B6B921F410F3A00E2A20D /* RepoNameCollectionViewCell.xib in Resources */,
 				266B6B0A1F3EF20600E2A20D /* Main.storyboard in Resources */,
+				266B6B8D1F410F0C00E2A20D /* RepoForkCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,14 +534,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266B6B8C1F410F0C00E2A20D /* RepoForkCollectionViewCell.swift in Sources */,
 				266B6B4B1F405EEF00E2A20D /* Coordinator.swift in Sources */,
 				266B6B721F40D85600E2A20D /* Owner.swift in Sources */,
 				266B6B5A1F407D2500E2A20D /* Repo.swift in Sources */,
 				266B6B481F405CFB00E2A20D /* CoreCoordinator.swift in Sources */,
 				266B6B521F40711900E2A20D /* StoryboardInstantiable.swift in Sources */,
+				266B6B911F410F3A00E2A20D /* RepoNameCollectionViewCell.swift in Sources */,
 				266B6B3B1F3F39A700E2A20D /* ReposCollectionViewModel.swift in Sources */,
+				266B6B951F410F5D00E2A20D /* RepoOwnerCollectionViewCell.swift in Sources */,
 				266B6B411F3F41CA00E2A20D /* RepoDetailViewModel.swift in Sources */,
 				266B6B4D1F40663600E2A20D /* RootContainerViewController.swift in Sources */,
+				266B6B991F410FA300E2A20D /* RepoCountsCollectionViewCell.swift in Sources */,
 				266B6B651F40A6FF00E2A20D /* RepoPreviewCollectionViewCell.swift in Sources */,
 				266B6B461F3F42C600E2A20D /* RepoDetailCollectionViewController.swift in Sources */,
 				266B6B691F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift in Sources */,
@@ -483,7 +553,9 @@
 				266B6B3E1F3F39D000E2A20D /* RepoPreviewCellViewModel.swift in Sources */,
 				266B6B441F3F42A900E2A20D /* ReposCollectionViewController.swift in Sources */,
 				266B6B051F3EF20600E2A20D /* AppDelegate.swift in Sources */,
+				266B6B881F41051D00E2A20D /* RepoDetailed.swift in Sources */,
 				266B6B551F40799900E2A20D /* GitHubDataSource.swift in Sources */,
+				266B6B9C1F4116F200E2A20D /* RepoDetailCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

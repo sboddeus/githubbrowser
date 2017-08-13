@@ -12,6 +12,7 @@ struct Repo {
     let id: Int
     let name: String?
     let description: String?
+    let url: String
     let owner: Owner
 }
 
@@ -20,6 +21,7 @@ extension Repo: Decodable {
         return try Repo(id: e <| "id",
                         name: e <|? "full_name",
                         description: e <|? "description",
+                        url: e <| "url",
                         owner: e <| "owner")
     }
 }

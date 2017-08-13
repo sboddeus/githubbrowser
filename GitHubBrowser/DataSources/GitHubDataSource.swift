@@ -10,6 +10,7 @@ import Alamofire
 
 protocol RepoDataSource {
     func fetchPublicRepos(since: String?, completion: @escaping ([Repo]?, Error?) -> ())
+    func fetchRepoDetails(url: URL, completion: @escaping(RepoDetailed?, Error?) -> ())
 }
 
 struct GitHubRepoDataSource: RepoDataSource {
@@ -28,6 +29,19 @@ struct GitHubRepoDataSource: RepoDataSource {
                     let repos = try [Repo].decode(json)
                     completion(repos, nil)
                 } catch (let e ) {
+                    completion(nil, e)
+                }
+            }
+        }
+    }
+
+    func fetchRepoDetails(url: URL, completion: @escaping (RepoDetailed?, Error?) -> ()) {
+        Alamofire.request(url).responseJSON { (response) in
+            if let json = response.result.value {
+                do {
+                    let repos = try RepoDetailed.decodeValue(json)
+                    completion(repos, nil)
+                } catch (let e) {
                     completion(nil, e)
                 }
             }

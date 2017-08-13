@@ -8,67 +8,103 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+enum RepoDetailCellIdentifier: String {
+    case close
+    case name
+    case description
+    case fork
+    case counts
+    case owner
+}
+
+protocol RepoDetailCollectionViewControllerDelegate: class {
+    func userDidClose()
+}
 
 final class RepoDetailCollectionViewController: UICollectionViewController {
+
+    weak var delegate: RepoDetailCollectionViewControllerDelegate? = nil
+
+    private lazy var flowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 0.0
+        flowLayout.minimumLineSpacing = 0.0
+        flowLayout.sectionHeadersPinToVisibleBounds = true
+
+        return flowLayout
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
+        collectionView?.collectionViewLayout = flowLayout
+        registerCells()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel?.load { [weak self] in
+            self?.setupBindings()
+        }
     }
 
     var viewModel: RepoDetailViewModel? = nil {
         didSet {
             guard isViewLoaded else { return }
-            setupBindings()
+            viewModel?.load {
+                self.setupBindings()
+            }
         }
     }
+
+    var cellViewModel: RepoDetailCellViewModel? = nil
 
     private func setupBindings() {
         collectionView?.reloadData()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    func registerCells() {
+        collectionView?.register(UINib(nibName: "RepoNameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: RepoDetailCellIdentifier.name.rawValue)
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
+    enum RepoDetailSection: Int {
+        case name = 0
+        case description = 1
+        case fork = 2
+        case counts = 3
+        case owner = 4
+    }
+
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+        switch RepoDetailSection(rawValue: indexPath.section)! {
+        case .name:
+            return nameCell(collectionView: collectionView, indexPath: indexPath)
+        default:
+            return UICollectionViewCell()
+        }
+    }
+
+    // Helpers
+    private func nameCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepoDetailCellIdentifier.name.rawValue, for: indexPath)
+
+        guard let repoCell = cell as? RepoNameCollectionViewCell else { return cell }
+
+        repoCell.vm = viewModel?.cellViewModel
+
+        return repoCell
     }
 
     // MARK: UICollectionViewDelegate
@@ -102,6 +138,16 @@ final class RepoDetailCollectionViewController: UICollectionViewController {
     }
     */
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.userDidClose()
+    }
+
+}
+
+extension RepoDetailCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 100)
+    }
 }
 
 extension RepoDetailCollectionViewController: StoryboardInstantiatiable {

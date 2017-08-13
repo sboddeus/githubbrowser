@@ -8,10 +8,35 @@
 
 import Foundation
 
-struct RepoDetailViewModel {
-    private let repo: Repo
+class RepoDetailViewModel {
+    private let dataSource: RepoDataSource
 
-    init(repo: Repo) {
+    private let repo: Repo
+    var detail: RepoDetailed?
+
+    var cellViewModel: RepoDetailCellViewModel? {
+        if let detail = detail {
+            return RepoDetailCellViewModel(repo: detail)
+        }
+
+        return nil
+    }
+
+    init(repo: Repo, dataSource: RepoDataSource) {
         self.repo = repo
+        self.dataSource = dataSource
+        self.detail = nil
+    }
+
+    func load(completion: @escaping (() -> ())) {
+        dataSource.fetchRepoDetails(url: URL(string: repo.url)!) { (detail, error) in
+            if let error = error {
+                print(error)
+            }
+
+            self.detail = detail
+
+            completion()
+        }
     }
 }

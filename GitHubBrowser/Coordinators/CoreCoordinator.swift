@@ -31,10 +31,17 @@ final class CoreCoordinator: Coordinator {
     fileprivate func showDetail(repo: RepoDetailViewModel) {
         let vc = RepoDetailCollectionViewController.makeController()
         vc.viewModel = repo
+        vc.delegate = self
 
         rootContainerViewController.push(viewController: vc)
     }
 
+}
+
+extension CoreCoordinator: RepoDetailCollectionViewControllerDelegate {
+    func userDidClose() {
+        rootContainerViewController.pop()
+    }
 }
 
 extension CoreCoordinator: ReposCollectionViewControllerDelegate {

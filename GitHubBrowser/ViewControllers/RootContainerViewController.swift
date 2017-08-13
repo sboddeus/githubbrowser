@@ -34,7 +34,7 @@ class RootContainerViewController: UIViewController {
     func push(viewController: UIViewController) {
         if let currentViewController = currentViewController {
             addChildView(of: viewController)
-            viewControllerStack.insert(viewController, at: viewControllerStack.count)
+            viewControllerStack.insert(currentViewController, at: viewControllerStack.count)
             UIView.transition(from: currentViewController.view, to: viewController.view, duration: RootContainerViewController.animationDuration, options: .transitionCurlUp, completion: { _ in
                 self.removeChildView(of: currentViewController)
                 self.currentViewController = viewController
