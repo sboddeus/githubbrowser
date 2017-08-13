@@ -11,7 +11,6 @@
 		266B6B0A1F3EF20600E2A20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B081F3EF20600E2A20D /* Main.storyboard */; };
 		266B6B0C1F3EF20600E2A20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B0B1F3EF20600E2A20D /* Assets.xcassets */; };
 		266B6B0F1F3EF20600E2A20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B0D1F3EF20600E2A20D /* LaunchScreen.storyboard */; };
-		266B6B1A1F3EF20600E2A20D /* GitHubBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B191F3EF20600E2A20D /* GitHubBrowserTests.swift */; };
 		266B6B251F3EF20600E2A20D /* GitHubBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B241F3EF20600E2A20D /* GitHubBrowserUITests.swift */; };
 		266B6B361F3EF63500E2A20D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
 		266B6B371F3EF63500E2A20D /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B341F3EF63500E2A20D /* Himotoki.framework */; };
@@ -35,6 +34,13 @@
 		266B6B6F1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */; };
 		266B6B701F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */; };
 		266B6B721F40D85600E2A20D /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B711F40D85600E2A20D /* Owner.swift */; };
+		266B6B751F40EC4A00E2A20D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B731F40EC4A00E2A20D /* Nimble.framework */; };
+		266B6B761F40EC4A00E2A20D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B741F40EC4A00E2A20D /* Quick.framework */; };
+		266B6B7C1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B7B1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift */; };
+		266B6B7E1F40EE1900E2A20D /* TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B7D1F40EE1900E2A20D /* TestModels.swift */; };
+		266B6B821F40F21800E2A20D /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266B6B801F40F21800E2A20D /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		266B6B831F40F21800E2A20D /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266B6B811F40F21800E2A20D /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		266B6B851F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B841F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		266B6B7F1F40F20400E2A20D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				266B6B821F40F21800E2A20D /* Nimble.framework in CopyFiles */,
+				266B6B831F40F21800E2A20D /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		266B6B011F3EF20600E2A20D /* GitHubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		266B6B041F3EF20600E2A20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +82,6 @@
 		266B6B0E1F3EF20600E2A20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		266B6B101F3EF20600E2A20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		266B6B151F3EF20600E2A20D /* GitHubBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		266B6B191F3EF20600E2A20D /* GitHubBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBrowserTests.swift; sourceTree = "<group>"; };
 		266B6B1B1F3EF20600E2A20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		266B6B201F3EF20600E2A20D /* GitHubBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		266B6B241F3EF20600E2A20D /* GitHubBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBrowserUITests.swift; sourceTree = "<group>"; };
@@ -89,6 +108,15 @@
 		266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoSearchCollectionViewCell.swift; path = ViewControllers/Cells/RepoSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoSearchCollectionViewCell.xib; path = ViewControllers/Cells/RepoSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		266B6B711F40D85600E2A20D /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Owner.swift; path = Models/Owner.swift; sourceTree = "<group>"; };
+		266B6B731F40EC4A00E2A20D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		266B6B741F40EC4A00E2A20D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		266B6B771F40EC6600E2A20D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		266B6B781F40EC6600E2A20D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		266B6B7B1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposCollectionViewModelTests.swift; sourceTree = "<group>"; };
+		266B6B7D1F40EE1900E2A20D /* TestModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
+		266B6B801F40F21800E2A20D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		266B6B811F40F21800E2A20D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		266B6B841F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoPreviewCellViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266B6B751F40EC4A00E2A20D /* Nimble.framework in Frameworks */,
+				266B6B761F40EC4A00E2A20D /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +153,12 @@
 		266B6AF81F3EF20600E2A20D = {
 			isa = PBXGroup;
 			children = (
+				266B6B801F40F21800E2A20D /* Nimble.framework */,
+				266B6B811F40F21800E2A20D /* Quick.framework */,
+				266B6B771F40EC6600E2A20D /* Nimble.framework */,
+				266B6B781F40EC6600E2A20D /* Quick.framework */,
+				266B6B731F40EC4A00E2A20D /* Nimble.framework */,
+				266B6B741F40EC4A00E2A20D /* Quick.framework */,
 				266B6B031F3EF20600E2A20D /* GitHubBrowser */,
 				266B6B181F3EF20600E2A20D /* GitHubBrowserTests */,
 				266B6B231F3EF20600E2A20D /* GitHubBrowserUITests */,
@@ -162,8 +198,10 @@
 		266B6B181F3EF20600E2A20D /* GitHubBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				266B6B191F3EF20600E2A20D /* GitHubBrowserTests.swift */,
 				266B6B1B1F3EF20600E2A20D /* Info.plist */,
+				266B6B7B1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift */,
+				266B6B7D1F40EE1900E2A20D /* TestModels.swift */,
+				266B6B841F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift */,
 			);
 			path = GitHubBrowserTests;
 			sourceTree = "<group>";
@@ -292,6 +330,7 @@
 				266B6B111F3EF20600E2A20D /* Sources */,
 				266B6B121F3EF20600E2A20D /* Frameworks */,
 				266B6B131F3EF20600E2A20D /* Resources */,
+				266B6B7F1F40F20400E2A20D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -452,7 +491,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				266B6B1A1F3EF20600E2A20D /* GitHubBrowserTests.swift in Sources */,
+				266B6B7C1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift in Sources */,
+				266B6B7E1F40EE1900E2A20D /* TestModels.swift in Sources */,
+				266B6B851F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +675,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 64UY78D655;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitHubBrowserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = boddeus.GitHubBrowserTests;
@@ -649,6 +694,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 64UY78D655;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitHubBrowserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = boddeus.GitHubBrowserTests;
