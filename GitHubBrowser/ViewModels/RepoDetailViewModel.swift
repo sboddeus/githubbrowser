@@ -9,9 +9,9 @@
 import Foundation
 
 struct RepoDetailViewModel {
-    private let dataSource: RepoDataSource
+    private let repo: Repo
 
-    init(dataSource: RepoDataSource) {
-        self.dataSource = dataSource
+    init(repo: Repo) {
+        self.repo = repo
     }
 }

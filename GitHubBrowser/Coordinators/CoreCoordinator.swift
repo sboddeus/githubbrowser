@@ -23,8 +23,22 @@ final class CoreCoordinator: Coordinator {
     private func showPublicRepos() {
         let vc = ReposCollectionViewController.makeController()
         vc.viewModel = ReposCollectionViewModel(dataSource: GitHubRepoDataSource())
-
+        vc.delegate = self
+        
         rootContainerViewController.show(viewController: vc)
     }
 
+    fileprivate func showDetail(repo: RepoDetailViewModel) {
+        let vc = RepoDetailCollectionViewController.makeController()
+        vc.viewModel = repo
+
+        rootContainerViewController.push(viewController: vc)
+    }
+
+}
+
+extension CoreCoordinator: ReposCollectionViewControllerDelegate {
+    func userDidSelect(repo: RepoDetailViewModel) {
+        showDetail(repo: repo)
+    }
 }

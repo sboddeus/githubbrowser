@@ -14,7 +14,13 @@ enum PublicRepoCellIdentifier: String {
     case repo
 }
 
+protocol ReposCollectionViewControllerDelegate: class {
+    func userDidSelect(repo: RepoDetailViewModel)
+}
+
 final class ReposCollectionViewController: UICollectionViewController {
+
+    weak var delegate: ReposCollectionViewControllerDelegate? = nil
 
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -121,12 +127,16 @@ final class ReposCollectionViewController: UICollectionViewController {
     }
     // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch RepoSection(rawValue: indexPath.section)! {
+        case .repos:
+            if let repoDetailVM = viewModel?.detailViewModel(itemIndex: indexPath.item) {
+                delegate?.userDidSelect(repo: repoDetailVM)
+            }
+        default:
+            break
+        }
     }
-*/
 
 }
 

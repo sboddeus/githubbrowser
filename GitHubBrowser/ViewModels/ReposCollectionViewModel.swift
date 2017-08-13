@@ -11,7 +11,7 @@ import Foundation
 class ReposCollectionViewModel {
     private let dataSource: RepoDataSource
 
-    var repos: [Repo]? = nil {
+    private var repos: [Repo]? = nil {
         didSet {
             if let repos = repos {
                 self.repoViewModels = repos.map({ RepoPreviewCellViewModel(repo: $0)})
@@ -22,6 +22,14 @@ class ReposCollectionViewModel {
     }
 
     var repoViewModels: [RepoPreviewCellViewModel]? = nil
+
+    func detailViewModel(itemIndex: Int) -> RepoDetailViewModel? {
+        if let repo = repos?[itemIndex] {
+            return RepoDetailViewModel(repo: repo)
+        }
+
+        return nil
+    }
 
     init(dataSource: RepoDataSource) {
         self.dataSource = dataSource
