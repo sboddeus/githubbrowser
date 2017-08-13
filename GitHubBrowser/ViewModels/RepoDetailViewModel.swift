@@ -1,5 +1,5 @@
 //
-//  RepoDescriptionViewModel.swift
+//  RepoDetailViewModel.swift
 //  GitHubBrowser
 //
 //  Created by Sye Boddeus on 12/08/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RepoDescriptionViewModel {
+struct RepoDetailViewModel {
     private let dataSource: RepoDataSource
 
     init(dataSource: RepoDataSource) {

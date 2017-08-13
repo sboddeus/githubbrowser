@@ -1,5 +1,5 @@
 //
-//  RepoViewModel.swift
+//  ReposCollectionViewModel.swift
 //  GitHubBrowser
 //
 //  Created by Sye Boddeus on 12/08/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RepoViewModel {
+class ReposCollectionViewModel {
     private let dataSource: RepoDataSource
 
     var repos: [Repo]? = nil {

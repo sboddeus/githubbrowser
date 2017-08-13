@@ -29,7 +29,7 @@ final class RepoDetailCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var viewModel: RepoDescriptionViewModel? = nil {
+    var viewModel: RepoDetailViewModel? = nil {
         didSet {
             guard isViewLoaded else { return }
             setupBindings()

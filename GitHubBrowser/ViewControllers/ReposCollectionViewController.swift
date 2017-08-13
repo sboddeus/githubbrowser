@@ -1,5 +1,5 @@
 //
-//  PublicReposCollectionViewController.swift
+//  ReposCollectionViewController.swift
 //  GitHubBrowser
 //
 //  Created by Sye Boddeus on 12/08/2017.
@@ -14,7 +14,7 @@ enum PublicRepoCellIdentifier: String {
     case repo
 }
 
-final class PublicReposCollectionViewController: UICollectionViewController {
+final class ReposCollectionViewController: UICollectionViewController {
 
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -45,7 +45,7 @@ final class PublicReposCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var viewModel: RepoViewModel? = nil {
+    var viewModel: ReposCollectionViewModel? = nil {
         didSet {
             guard isViewLoaded else { return }
             viewModel?.load { [weak self] in
@@ -94,7 +94,7 @@ final class PublicReposCollectionViewController: UICollectionViewController {
     // Helpers
 
     private func registerCells() {
-        collectionView?.register(UINib(nibName: "RepoNameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.repo.rawValue)
+        collectionView?.register(UINib(nibName: "RepoPreviewCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.repo.rawValue)
         collectionView?.register(UINib(nibName: "RepoHeaderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.header.rawValue)
         collectionView?.register(UINib(nibName: "RepoSearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PublicRepoCellIdentifier.search.rawValue)
     }
@@ -113,7 +113,7 @@ final class PublicReposCollectionViewController: UICollectionViewController {
     private func repoCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PublicRepoCellIdentifier.repo.rawValue, for: indexPath)
 
-        guard let repoCell = cell as? RepoNameCollectionViewCell else { return cell }
+        guard let repoCell = cell as? RepoPreviewCollectionViewCell else { return cell }
 
         repoCell.repoPreviewViewModel = viewModel?.repoViewModels?[indexPath.item]
 
@@ -130,14 +130,22 @@ final class PublicReposCollectionViewController: UICollectionViewController {
 
 }
 
-extension PublicReposCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension ReposCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 80)
+        switch RepoSection(rawValue: indexPath.section)! {
+        case .header:
+            return CGSize(width: view.frame.size.width, height: 80)
+        case .search:
+            return CGSize(width: view.frame.size.width-40, height: 40)
+        case .repos:
+            return CGSize(width: view.frame.size.width, height: 60)
+        }
+
     }
 }
 
-extension PublicReposCollectionViewController: StoryboardInstantiatiable {
+extension ReposCollectionViewController: StoryboardInstantiatiable {
     static let storyboardName: String = "Main"
-    static let storyboardIdentifier: String? = "PublicReposCollectionViewController"
+    static let storyboardIdentifier: String? = "ReposCollectionViewController"
     static let storyboardBundle: Bundle? = nil
 }

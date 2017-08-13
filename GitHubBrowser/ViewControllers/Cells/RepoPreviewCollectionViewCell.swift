@@ -1,5 +1,5 @@
 //
-//  RepoNameCollectionViewCell.swift
+//  RepoPreviewCollectionViewCell.swift
 //  GitHubBrowser
 //
 //  Created by Sye Boddeus on 13/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoNameCollectionViewCell: UICollectionViewCell {
+class RepoPreviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
 
     var repoPreviewViewModel: RepoPreviewCellViewModel? = nil {
