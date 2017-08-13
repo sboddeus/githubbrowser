@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RepoPreviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var shortDescription: UILabel!
+    @IBOutlet weak var image: UIImageView!
 
     var repoPreviewViewModel: RepoPreviewCellViewModel? = nil {
         didSet {
             name.text = repoPreviewViewModel?.name
+            shortDescription.text = repoPreviewViewModel?.shortDescription
+            image.sd_setImage(with: repoPreviewViewModel?.avatarUrl, completed: nil)
+
+            image.layer.cornerRadius = 10
+            image.clipsToBounds = true
         }
     }
 
@@ -21,5 +29,4 @@ class RepoPreviewCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

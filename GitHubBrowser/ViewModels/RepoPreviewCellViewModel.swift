@@ -20,4 +20,20 @@ struct RepoPreviewCellViewModel {
             return repo.name
         }
     }
+
+    var shortDescription: String? {
+        get {
+            return repo.description
+        }
+    }
+
+    var avatarUrl: URL? {
+        get {
+            if let url = repo.owner.avatarUrl {
+                return URL(string: url)
+            }
+
+            return nil
+        }
+    }
 }

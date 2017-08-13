@@ -34,6 +34,7 @@
 		266B6B6A1F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */; };
 		266B6B6F1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */; };
 		266B6B701F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */; };
+		266B6B721F40D85600E2A20D /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B711F40D85600E2A20D /* Owner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoHeaderCollectionViewCell.xib; path = ViewControllers/Cells/RepoHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoSearchCollectionViewCell.swift; path = ViewControllers/Cells/RepoSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoSearchCollectionViewCell.xib; path = ViewControllers/Cells/RepoSearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		266B6B711F40D85600E2A20D /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Owner.swift; path = Models/Owner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				266B6B591F407D2500E2A20D /* Repo.swift */,
+				266B6B711F40D85600E2A20D /* Owner.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				266B6B4B1F405EEF00E2A20D /* Coordinator.swift in Sources */,
+				266B6B721F40D85600E2A20D /* Owner.swift in Sources */,
 				266B6B5A1F407D2500E2A20D /* Repo.swift in Sources */,
 				266B6B481F405CFB00E2A20D /* CoreCoordinator.swift in Sources */,
 				266B6B521F40711900E2A20D /* StoryboardInstantiable.swift in Sources */,

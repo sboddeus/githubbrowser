@@ -138,7 +138,7 @@ extension ReposCollectionViewController: UICollectionViewDelegateFlowLayout {
         case .search:
             return CGSize(width: view.frame.size.width-40, height: 40)
         case .repos:
-            return CGSize(width: view.frame.size.width, height: 60)
+            return CGSize(width: view.frame.size.width, height: 70)
         }
 
     }

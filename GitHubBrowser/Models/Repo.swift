@@ -12,12 +12,14 @@ struct Repo {
     let id: Int
     let name: String?
     let description: String?
+    let owner: Owner
 }
 
 extension Repo: Decodable {
     static func decode(_ e: Extractor) throws -> Repo {
         return try Repo(id: e <| "id",
-                        name: e <|? "name",
-                        description: e <|? "description")
+                        name: e <|? "full_name",
+                        description: e <|? "description",
+                        owner: e <| "owner")
     }
 }
