@@ -9,7 +9,7 @@
 // This view model is shared amongst varies cells
 // this is baadddd practice, but given time constraints ill overlook it
 
-import Foundation
+import GitHubClient
 
 struct RepoDetailCellViewModel {
     private let repo: RepoDetailed

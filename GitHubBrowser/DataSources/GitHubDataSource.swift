@@ -8,15 +8,17 @@
 
 import Alamofire
 
-protocol RepoDataSource {
+public protocol RepoDataSource {
     func fetchPublicRepos(since: String?, completion: @escaping ([Repo]?, Error?) -> ())
     func fetchRepoDetails(url: URL, completion: @escaping(RepoDetailed?, Error?) -> ())
 }
 
-struct GitHubRepoDataSource: RepoDataSource {
+public struct GitHubRepoDataSource: RepoDataSource {
     let baseUrlString = "https://api.github.com"
 
-    func fetchPublicRepos(since: String?, completion: @escaping ([Repo]?, Error?) -> ()) {
+    public init() {}
+
+    public func fetchPublicRepos(since: String?, completion: @escaping ([Repo]?, Error?) -> ()) {
         var request = "\(baseUrlString)/repositories"
 
         if let since = since {
@@ -35,7 +37,7 @@ struct GitHubRepoDataSource: RepoDataSource {
         }
     }
 
-    func fetchRepoDetails(url: URL, completion: @escaping (RepoDetailed?, Error?) -> ()) {
+    public func fetchRepoDetails(url: URL, completion: @escaping (RepoDetailed?, Error?) -> ()) {
         Alamofire.request(url).responseJSON { (response) in
             if let json = response.result.value {
                 do {

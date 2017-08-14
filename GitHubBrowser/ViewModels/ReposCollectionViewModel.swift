@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GitHubClient
 
 class ReposCollectionViewModel {
     private let dataSource: RepoDataSource

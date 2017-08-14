@@ -8,20 +8,20 @@
 
 import Himotoki
 
-struct RepoDetailed {
-    let id: Int
-    let name: String?
-    let description: String?
-    let url: String?
-    let fork: Bool
-    let forksCount: Int
-    let watchersCount: Int
-    let openIssuesCount: Int
-    let owner: Owner
+public struct RepoDetailed {
+    public let id: Int
+    public let name: String?
+    public let description: String?
+    public let url: String?
+    public let fork: Bool
+    public let forksCount: Int
+    public let watchersCount: Int
+    public let openIssuesCount: Int
+    public let owner: Owner
 }
 
 extension RepoDetailed: Decodable {
-    static func decode(_ e: Extractor) throws -> RepoDetailed {
+    public static func decode(_ e: Extractor) throws -> RepoDetailed {
         return try RepoDetailed(id: e <| "id",
                         name: e <|? "full_name",
                         description: e <|? "description",

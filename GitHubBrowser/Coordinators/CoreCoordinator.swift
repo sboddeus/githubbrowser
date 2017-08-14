@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GitHubClient
 
 final class CoreCoordinator: Coordinator {
     fileprivate var rootContainerViewController: RootContainerViewController!

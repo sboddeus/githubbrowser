@@ -48,6 +48,16 @@
                ReferencedContainer = "container:GitHubBrowser.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "26C3FD831F4200A10021827D"
+               BuildableName = "GitHubClientTests.xctest"
+               BlueprintName = "GitHubClientTests"
+               ReferencedContainer = "container:GitHubBrowser.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

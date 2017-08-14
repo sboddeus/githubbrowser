@@ -6,7 +6,7 @@
 //  Copyright © 2017 Boddeus. All rights reserved.
 //
 
-import Foundation
+import GitHubClient
 
 class RepoDetailViewModel {
     private let dataSource: RepoDataSource

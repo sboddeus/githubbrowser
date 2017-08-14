@@ -8,14 +8,14 @@
 
 import Himotoki
 
-struct Owner {
-    let id: Int
-    let login: String?
-    let avatarUrl: String?
+public struct Owner {
+    public let id: Int
+    public let login: String?
+    public let avatarUrl: String?
 }
 
 extension Owner: Decodable {
-    static func decode(_ e: Extractor) throws -> Owner {
+    public static func decode(_ e: Extractor) throws -> Owner {
         return try Owner(id: e <| "id",
                         login: e <|? "login",
                         avatarUrl: e <|? "avatar_url")
