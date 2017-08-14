@@ -18,7 +18,6 @@ class RepoPreviewCellViewModelTests: QuickSpec {
             let vm = RepoPreviewCellViewModel(repo: GoodTestDataSource.testRepoOne)
 
             context("Getting data from a good data source") {
-
                 it("should be able to produce the correct data from the Repo object") {
                     expect(vm.avatarUrl) == URL(string: GoodTestDataSource.testRepoOne.owner.avatarUrl!)
                     expect(vm.shortDescription) == GoodTestDataSource.testRepoOne.description

@@ -51,6 +51,7 @@
 		266B6B991F410FA300E2A20D /* RepoCountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B971F410FA300E2A20D /* RepoCountsCollectionViewCell.swift */; };
 		266B6B9A1F410FA300E2A20D /* RepoCountsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266B6B981F410FA300E2A20D /* RepoCountsCollectionViewCell.xib */; };
 		266B6B9C1F4116F200E2A20D /* RepoDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B9B1F4116F200E2A20D /* RepoDetailCellViewModel.swift */; };
+		266B6B9F1F41286900E2A20D /* RepoDetailCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B6B9E1F41286900E2A20D /* RepoDetailCellViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		266B6B971F410FA300E2A20D /* RepoCountsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoCountsCollectionViewCell.swift; path = ViewControllers/Cells/RepoCountsCollectionViewCell.swift; sourceTree = "<group>"; };
 		266B6B981F410FA300E2A20D /* RepoCountsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RepoCountsCollectionViewCell.xib; path = ViewControllers/Cells/RepoCountsCollectionViewCell.xib; sourceTree = "<group>"; };
 		266B6B9B1F4116F200E2A20D /* RepoDetailCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoDetailCellViewModel.swift; path = ViewModels/RepoDetailCellViewModel.swift; sourceTree = "<group>"; };
+		266B6B9E1F41286900E2A20D /* RepoDetailCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailCellViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				266B6B7B1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift */,
 				266B6B7D1F40EE1900E2A20D /* TestModels.swift */,
 				266B6B841F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift */,
+				266B6B9E1F41286900E2A20D /* RepoDetailCellViewModelTests.swift */,
 			);
 			path = GitHubBrowserTests;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				266B6B7C1F40ED2400E2A20D /* ReposCollectionViewModelTests.swift in Sources */,
+				266B6B9F1F41286900E2A20D /* RepoDetailCellViewModelTests.swift in Sources */,
 				266B6B7E1F40EE1900E2A20D /* TestModels.swift in Sources */,
 				266B6B851F40F56E00E2A20D /* RepoPreviewCellViewModelTests.swift in Sources */,
 			);

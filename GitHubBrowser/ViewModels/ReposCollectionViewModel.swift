@@ -11,7 +11,7 @@ import Foundation
 class ReposCollectionViewModel {
     private let dataSource: RepoDataSource
 
-    private var repos: [Repo]? = nil {
+    var repos: [Repo]? = nil {
         didSet {
             if let repos = repos {
                 self.repoViewModels = repos.map({ RepoPreviewCellViewModel(repo: $0)})
