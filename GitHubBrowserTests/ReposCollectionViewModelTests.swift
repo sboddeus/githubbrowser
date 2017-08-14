@@ -35,7 +35,8 @@ class ReposCollectionViewModelTests: QuickSpec {
                     expect(vm.repoViewModels?.count) == 1
 
                     let firstRepoPreview = vm.repoViewModels?[0]
-                    expect(firstRepoPreview?.avatarUrl?.absoluteString) == GoodTestDataSource.testOwnerOne.avatarUrl
+                    expect(firstRepoPreview?.avatarUrl) == URL(string: GoodTestDataSource.testOwnerOne.avatarUrl!)
+                    expect(firstRepoPreview?.name) == GoodTestDataSource.testRepoOne.name
                 }
             }
         }

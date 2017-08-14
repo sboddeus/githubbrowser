@@ -25,6 +25,18 @@ class RepoDetailCellViewModelTests: QuickSpec {
                 it("should transform the avatar url") {
                     expect(vm.avatarUrl) == URL(string: "www.google.com")
                 }
+
+                it("should transform the description") {
+                    expect(vm.shortDescription) == "A test repo"
+                }
+
+                it("should transform the watchers count") {
+                    expect(vm.watchersCount) == "Watchers: 10"
+                }
+
+                it("should transform the open issues count") {
+                    expect(vm.issuesCount) == "Open Issues: 10"
+                }
             })
         }
     }

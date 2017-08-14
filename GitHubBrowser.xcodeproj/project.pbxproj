@@ -64,6 +64,7 @@
 		26C3FDBC1F423A170021827D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FDBA1F423A170021827D /* Quick.framework */; };
 		26C3FDBE1F42407B0021827D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FDB91F423A170021827D /* Nimble.framework */; };
 		26C3FDBF1F42407B0021827D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FDBA1F423A170021827D /* Quick.framework */; };
+		26C3FDC21F4246CC0021827D /* JAMUITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C3FDC11F4246CC0021827D /* JAMUITestHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		26C3FDB71F422B4F0021827D /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		26C3FDB91F423A170021827D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		26C3FDBA1F423A170021827D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		26C3FDC11F4246CC0021827D /* JAMUITestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMUITestHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			children = (
 				266B6B241F3EF20600E2A20D /* GitHubBrowserUITests.swift */,
 				266B6B261F3EF20600E2A20D /* Info.plist */,
+				26C3FDC11F4246CC0021827D /* JAMUITestHelper.swift */,
 			);
 			path = GitHubBrowserUITests;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C3FDC21F4246CC0021827D /* JAMUITestHelper.swift in Sources */,
 				266B6B251F3EF20600E2A20D /* GitHubBrowserUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

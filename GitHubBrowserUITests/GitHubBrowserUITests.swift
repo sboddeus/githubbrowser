@@ -9,7 +9,10 @@
 import XCTest
 
 class GitHubBrowserUITests: XCTestCase {
-        
+    let app = XCUIApplication()
+    let waitTime: UInt32 = 3
+    let shortWaitTime: UInt32 = 1
+
     override func setUp() {
         super.setUp()
         
@@ -18,19 +21,24 @@ class GitHubBrowserUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        app.launch()
+        waitForElementToExist(app)
+    }
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    func testRepoViewLoads() {
+        sleep(waitTime)
+        XCTAssert(app.collectionViews["reposCollection"].exists, "Repo collection not loaded")
+        XCTAssert(app.collectionViews["reposCollection"].cells.count > 0, "Repo could not load cells")
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    func testCoreFlow() {
+        sleep(waitTime)
+        let item = app.collectionViews["reposCollection"].cells.element(boundBy: 3)
+        XCTAssert(item.exists, "No repo cells loaded")
+
+        item.tap()
+        sleep(shortWaitTime)
+        XCTAssert(app.collectionViews["repoDetail"].exists, "Repo detail could not load")
     }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
+
 }
