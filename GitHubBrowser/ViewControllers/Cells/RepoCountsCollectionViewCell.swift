@@ -13,6 +13,13 @@ class RepoCountsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var watchersLabel: UILabel!
     @IBOutlet weak var issuesLabel: UILabel!
 
+    var vm: RepoDetailCellViewModel? = nil {
+        didSet {
+            watchersLabel.text = vm?.watchersCount
+            issuesLabel.text = vm?.issuesCount
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -66,20 +66,22 @@ final class RepoDetailCollectionViewController: UICollectionViewController {
 
     func registerCells() {
         collectionView?.register(UINib(nibName: "RepoNameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: RepoDetailCellIdentifier.name.rawValue)
+        collectionView?.register(UINib(nibName: "RepoForkCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: RepoDetailCellIdentifier.fork.rawValue)
+        collectionView?.register(UINib(nibName: "RepoOwnerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: RepoDetailCellIdentifier.owner.rawValue)
+        collectionView?.register(UINib(nibName: "RepoCountsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: RepoDetailCellIdentifier.counts.rawValue)
     }
 
     // MARK: UICollectionViewDataSource
 
     enum RepoDetailSection: Int {
         case name = 0
-        case description = 1
-        case fork = 2
-        case counts = 3
-        case owner = 4
+        case fork = 1
+        case counts = 2
+        case owner = 3
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 4
     }
 
 
@@ -91,8 +93,12 @@ final class RepoDetailCollectionViewController: UICollectionViewController {
         switch RepoDetailSection(rawValue: indexPath.section)! {
         case .name:
             return nameCell(collectionView: collectionView, indexPath: indexPath)
-        default:
-            return UICollectionViewCell()
+        case .fork:
+            return forkCell(collectionView: collectionView, indexPath: indexPath)
+        case .counts:
+            return countsCell(collectionView: collectionView, indexPath: indexPath)
+        case .owner:
+            return ownerCell(collectionView: collectionView, indexPath: indexPath)
         }
     }
 
@@ -107,36 +113,37 @@ final class RepoDetailCollectionViewController: UICollectionViewController {
         return repoCell
     }
 
+    private func forkCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepoDetailCellIdentifier.fork.rawValue, for: indexPath)
+
+        guard let repoCell = cell as? RepoForkCollectionViewCell else { return cell }
+
+        repoCell.vm = viewModel?.cellViewModel
+
+        return repoCell
+    }
+
+    private func countsCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepoDetailCellIdentifier.counts.rawValue, for: indexPath)
+
+        guard let repoCell = cell as? RepoCountsCollectionViewCell else { return cell }
+
+        repoCell.vm = viewModel?.cellViewModel
+        
+        return repoCell
+    }
+
+    private func ownerCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepoDetailCellIdentifier.owner.rawValue, for: indexPath)
+
+        guard let repoCell = cell as? RepoOwnerCollectionViewCell else { return cell }
+
+        repoCell.vm = viewModel?.cellViewModel
+        
+        return repoCell
+    }
+
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.userDidClose()
@@ -146,7 +153,16 @@ final class RepoDetailCollectionViewController: UICollectionViewController {
 
 extension RepoDetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 100)
+        switch RepoDetailSection(rawValue: indexPath.section)! {
+        case .name:
+            return CGSize(width: view.frame.size.width, height: 160)
+        case .fork:
+            return CGSize(width: view.frame.size.width, height: 120)
+        case .counts:
+            return CGSize(width: view.frame.size.width, height: 120)
+        case .owner:
+            return CGSize(width: view.frame.size.width, height: 300)
+        }
     }
 }
 

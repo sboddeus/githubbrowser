@@ -12,6 +12,16 @@ class RepoOwnerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var name: UILabel!
 
+    var vm: RepoDetailCellViewModel? = nil {
+        didSet {
+            avatarImage.sd_setImage(with: vm?.avatarUrl, completed: nil)
+            name.text = vm?.name
+
+            avatarImage.layer.cornerRadius = 10
+            avatarImage.clipsToBounds = true
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -12,40 +12,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RepoCountsCollectionViewCell" customModule="GitHubBrowser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="172" height="69"/>
+            <rect key="frame" x="0.0" y="0.0" width="239" height="121"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="172" height="69"/>
+                <rect key="frame" x="0.0" y="0.0" width="239" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17p-pO-amo">
-                        <rect key="frame" x="20" y="13" width="132" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17p-pO-amo">
+                        <rect key="frame" x="20" y="51" width="132" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAc-Jx-wms">
-                        <rect key="frame" x="20" y="42" width="132" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAc-Jx-wms">
+                        <rect key="frame" x="20" y="80" width="132" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Counts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab0-Wm-gaQ">
+                        <rect key="frame" x="20" y="13" width="199" height="30"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="qAc-Jx-wms" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="2P5-DI-HED"/>
-                <constraint firstItem="17p-pO-amo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="13" id="LYA-eQ-3l5"/>
-                <constraint firstItem="qAc-Jx-wms" firstAttribute="top" secondItem="17p-pO-amo" secondAttribute="bottom" constant="8" id="haG-Ha-mcU"/>
-                <constraint firstItem="17p-pO-amo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="u8u-eJ-qjf"/>
-                <constraint firstAttribute="trailing" secondItem="qAc-Jx-wms" secondAttribute="trailing" constant="20" id="x3b-kj-Usr"/>
-                <constraint firstAttribute="trailing" secondItem="17p-pO-amo" secondAttribute="trailing" constant="20" id="xH9-TV-b8p"/>
+                <constraint firstItem="ab0-Wm-gaQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="13" id="92b-OD-EFB"/>
+                <constraint firstItem="qAc-Jx-wms" firstAttribute="top" secondItem="17p-pO-amo" secondAttribute="bottom" constant="8" id="9iG-k8-fbT"/>
+                <constraint firstItem="ab0-Wm-gaQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="A7m-6K-4FZ"/>
+                <constraint firstItem="17p-pO-amo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="BY8-oF-39M"/>
+                <constraint firstItem="17p-pO-amo" firstAttribute="top" secondItem="ab0-Wm-gaQ" secondAttribute="bottom" constant="8" id="NSz-lf-n4h"/>
+                <constraint firstItem="qAc-Jx-wms" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="iWb-A7-qB9"/>
             </constraints>
-            <size key="customSize" width="172" height="69"/>
+            <size key="customSize" width="239" height="121"/>
             <connections>
                 <outlet property="issuesLabel" destination="qAc-Jx-wms" id="VNR-dE-EJd"/>
                 <outlet property="watchersLabel" destination="17p-pO-amo" id="35f-rg-tTX"/>
             </connections>
-            <point key="canvasLocation" x="-76" y="-115"/>
+            <point key="canvasLocation" x="-42.5" y="-141.5"/>
         </collectionViewCell>
     </objects>
 </document>

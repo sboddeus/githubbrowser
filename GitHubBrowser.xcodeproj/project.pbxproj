@@ -270,8 +270,6 @@
 				266B6B861F41039100E2A20D /* ReposCollection */,
 				266B6B891F410CC700E2A20D /* RepoDetailCollection */,
 				266B6B4C1F40663600E2A20D /* RootContainerViewController.swift */,
-				266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */,
-				266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -318,6 +316,8 @@
 				266B6B641F40A6FF00E2A20D /* RepoPreviewCollectionViewCell.xib */,
 				266B6B6D1F40A7F400E2A20D /* RepoSearchCollectionViewCell.swift */,
 				266B6B6E1F40A7F400E2A20D /* RepoSearchCollectionViewCell.xib */,
+				266B6B671F40A71D00E2A20D /* RepoHeaderCollectionViewCell.swift */,
+				266B6B681F40A71D00E2A20D /* RepoHeaderCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
