@@ -41,7 +41,7 @@ class ReposCollectionViewModel {
             if let repositories = repositories {
                 self.repos = repositories
             } else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "load error")
             }
 
             completion()

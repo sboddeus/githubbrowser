@@ -24,7 +24,7 @@ class ReposCollectionViewModelTests: QuickSpec {
                 it("should have one repo") {
                     expect(vm.repos?.count) == 1
                 }
-                it("should be able to product the correct data from the Repo object") {
+                it("should be able to produce the correct data from the Repo object") {
                     let firstRepo = vm.repos?[0]
                     expect(firstRepo?.description) == GoodTestDataSource.testRepoOne.description
                     expect(firstRepo?.id) == GoodTestDataSource.testRepoOne.id
