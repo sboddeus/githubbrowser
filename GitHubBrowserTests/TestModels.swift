@@ -9,6 +9,8 @@
 @testable import GitHubClient
 @testable import GitHubBrowser
 
+
+// Test Data Sources and Models
 struct GoodTestDataSource: RepoDataSource {
     static let testOwnerOne = Owner(id: 1, login: "owner one", avatarUrl: "www.google.com")
     static let testRepoOne = Repo(id: 1, name: "Test Repo One", description: "A test repo", url: "www.google.com", owner: testOwnerOne)
@@ -22,4 +24,9 @@ struct GoodTestDataSource: RepoDataSource {
         completion(GoodTestDataSource.testDetailedRepoOne, nil)
     }
 }
+
+// Test Coordinators
+
+class DummyOneCoordinator: Coordinator {}
+class DummyTwoCoordinator: Coordinator {}
 
