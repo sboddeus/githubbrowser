@@ -38,6 +38,13 @@ class GitHubBrowserUITests: XCTestCase {
         item.tap()
         sleep(shortWaitTime)
         XCTAssert(app.collectionViews["repoDetail"].exists, "Repo detail could not load")
+
+        let close = app.collectionViews["repoDetail"].cells.element(boundBy: 0)
+        XCTAssert(close.exists, "View did not load")
+        close.tap()
+
+        sleep(shortWaitTime)
+        XCTAssert(app.collectionViews["reposCollection"].exists, "Did not make it back to home page")
     }
 
 }
