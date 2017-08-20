@@ -47,6 +47,7 @@
 		26829D591F49A1D90024BA30 /* HTTPStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26829D581F49A1D90024BA30 /* HTTPStub.swift */; };
 		26829D5C1F49BE5F0024BA30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
 		26829D5E1F49C0AA0024BA30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
+		26829D5F1F49C3220024BA30 /* GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FD7C1F4200A10021827D /* GitHubClient.framework */; };
 		26C3FD731F41DA790021827D /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD721F41DA790021827D /* repositories.json */; };
 		26C3FD751F41DBA60021827D /* repos-mojombo-grit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD741F41DBA60021827D /* repos-mojombo-grit.json */; };
 		26C3FD851F4200A10021827D /* GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FD7C1F4200A10021827D /* GitHubClient.framework */; };
@@ -85,6 +86,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 266B6B001F3EF20600E2A20D;
 			remoteInfo = GitHubBrowser;
+		};
+		26829D601F49C6140024BA30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 266B6AF91F3EF20600E2A20D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26C3FD7B1F4200A10021827D;
+			remoteInfo = GitHubClient;
 		};
 		26C3FD861F4200A10021827D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -222,6 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26829D5F1F49C3220024BA30 /* GitHubClient.framework in Frameworks */,
 				26C3FDBE1F42407B0021827D /* Nimble.framework in Frameworks */,
 				26C3FDBF1F42407B0021827D /* Quick.framework in Frameworks */,
 			);
@@ -544,6 +553,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				26829D611F49C6140024BA30 /* PBXTargetDependency */,
 				266B6B171F3EF20600E2A20D /* PBXTargetDependency */,
 			);
 			name = GitHubBrowserTests;
@@ -875,6 +885,11 @@
 			isa = PBXTargetDependency;
 			target = 266B6B001F3EF20600E2A20D /* GitHubBrowser */;
 			targetProxy = 266B6B211F3EF20600E2A20D /* PBXContainerItemProxy */;
+		};
+		26829D611F49C6140024BA30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26C3FD7B1F4200A10021827D /* GitHubClient */;
+			targetProxy = 26829D601F49C6140024BA30 /* PBXContainerItemProxy */;
 		};
 		26C3FD871F4200A10021827D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
