@@ -275,7 +275,6 @@
 		266B6AF81F3EF20600E2A20D = {
 			isa = PBXGroup;
 			children = (
-				26C3FD761F4200430021827D /* GitHub Client */,
 				266B6B031F3EF20600E2A20D /* GitHubBrowser */,
 				266B6B181F3EF20600E2A20D /* GitHubBrowserTests */,
 				266B6B231F3EF20600E2A20D /* GitHubBrowserUITests */,
@@ -480,14 +479,6 @@
 			);
 			name = "Test Data";
 			path = ../GitHubBrowserTests;
-			sourceTree = "<group>";
-		};
-		26C3FD761F4200430021827D /* GitHub Client */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "GitHub Client";
-			path = GitHubBrowser;
 			sourceTree = "<group>";
 		};
 		26C3FD7D1F4200A10021827D /* GitHubClient */ = {
