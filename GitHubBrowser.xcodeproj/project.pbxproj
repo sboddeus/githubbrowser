@@ -46,6 +46,7 @@
 		26829D571F49A1C90024BA30 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26829D561F49A1C90024BA30 /* Fixture.swift */; };
 		26829D591F49A1D90024BA30 /* HTTPStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26829D581F49A1D90024BA30 /* HTTPStub.swift */; };
 		26829D5C1F49BE5F0024BA30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
+		26829D5E1F49C0AA0024BA30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
 		26C3FD731F41DA790021827D /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD721F41DA790021827D /* repositories.json */; };
 		26C3FD751F41DBA60021827D /* repos-mojombo-grit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD741F41DBA60021827D /* repos-mojombo-grit.json */; };
 		26C3FD851F4200A10021827D /* GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FD7C1F4200A10021827D /* GitHubClient.framework */; };
@@ -238,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C3FD9E1F4201550021827D /* Himotoki.framework in Frameworks */,
+				26829D5E1F49C0AA0024BA30 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,9 +752,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Himotoki.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
