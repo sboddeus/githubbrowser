@@ -9,6 +9,8 @@
 @testable import GitHubClient
 @testable import GitHubBrowser
 
+import SwiftCheck
+
 
 // Test Data Sources and Models
 struct GoodTestDataSource: RepoDataSource {
@@ -30,3 +32,20 @@ struct GoodTestDataSource: RepoDataSource {
 class DummyOneCoordinator: Coordinator {}
 class DummyTwoCoordinator: Coordinator {}
 
+// Arbitrary generation
+
+extension Owner: Arbitrary {
+    public static var arbitrary: Gen<Owner> {
+        return Gen.compose(build: { c in
+            return Owner(id: c.generate(), login: c.generate(), avatarUrl: c.generate())
+        })
+    }
+}
+
+extension Repo: Arbitrary {
+    public static var arbitrary: Gen<Repo> {
+        return Gen.compose(build: { c in
+            return Repo(id: c.generate(), name: c.generate(), description: c.generate(), url: c.generate(), owner: c.generate())
+        })
+    }
+}
