@@ -8,7 +8,6 @@
 
 import Quick
 import Nimble
-import GitHubClient
 
 @testable import GitHubBrowser
 

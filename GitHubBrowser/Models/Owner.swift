@@ -21,3 +21,13 @@ extension Owner: Decodable {
                         avatarUrl: e <|? "avatar_url")
     }
 }
+
+extension Owner: Hashable {
+    public static func ==(lhs: Owner, rhs: Owner) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    public var hashValue: Int {
+        return id
+    }
+}

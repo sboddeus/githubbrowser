@@ -25,3 +25,13 @@ extension Repo: Decodable {
                         owner: e <| "owner")
     }
 }
+
+extension Repo: Hashable {
+    public static func ==(lhs: Repo, rhs: Repo) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    public var hashValue: Int {
+        return id
+    }
+}

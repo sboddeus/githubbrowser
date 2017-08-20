@@ -48,6 +48,9 @@
 		26829D5C1F49BE5F0024BA30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
 		26829D5E1F49C0AA0024BA30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266B6B331F3EF63500E2A20D /* Alamofire.framework */; };
 		26829D5F1F49C3220024BA30 /* GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FD7C1F4200A10021827D /* GitHubClient.framework */; };
+		26829D621F49CA760024BA30 /* GitHubClient.framework in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD7C1F4200A10021827D /* GitHubClient.framework */; };
+		26829D641F49D1E80024BA30 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26829D631F49D1E80024BA30 /* SwiftCheck.framework */; };
+		26829D661F49D2930024BA30 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26829D651F49D2930024BA30 /* ModelTests.swift */; };
 		26C3FD731F41DA790021827D /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD721F41DA790021827D /* repositories.json */; };
 		26C3FD751F41DBA60021827D /* repos-mojombo-grit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C3FD741F41DBA60021827D /* repos-mojombo-grit.json */; };
 		26C3FD851F4200A10021827D /* GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C3FD7C1F4200A10021827D /* GitHubClient.framework */; };
@@ -199,6 +202,8 @@
 		266B6B9E1F41286900E2A20D /* RepoDetailCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailCellViewModelTests.swift; sourceTree = "<group>"; };
 		26829D561F49A1C90024BA30 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		26829D581F49A1D90024BA30 /* HTTPStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStub.swift; sourceTree = "<group>"; };
+		26829D631F49D1E80024BA30 /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/iOS/SwiftCheck.framework; sourceTree = "<group>"; };
+		26829D651F49D2930024BA30 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		26C3FD721F41DA790021827D /* repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = repositories.json; path = "Test Data/repositories.json"; sourceTree = "<group>"; };
 		26C3FD741F41DBA60021827D /* repos-mojombo-grit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "repos-mojombo-grit.json"; path = "Test Data/repos-mojombo-grit.json"; sourceTree = "<group>"; };
 		26C3FD7C1F4200A10021827D /* GitHubClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +265,7 @@
 				26C3FDBB1F423A170021827D /* Nimble.framework in Frameworks */,
 				26C3FDBC1F423A170021827D /* Quick.framework in Frameworks */,
 				26829D5C1F49BE5F0024BA30 /* Alamofire.framework in Frameworks */,
+				26829D641F49D1E80024BA30 /* SwiftCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +339,7 @@
 		266B6B321F3EF63400E2A20D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26829D631F49D1E80024BA30 /* SwiftCheck.framework */,
 				26C3FDB91F423A170021827D /* Nimble.framework */,
 				26C3FDBA1F423A170021827D /* Quick.framework */,
 				266B6B4E1F40684E00E2A20D /* Cartography.framework */,
@@ -499,6 +506,7 @@
 			children = (
 				26C3FD711F41DA380021827D /* Test Data */,
 				26C3FD8B1F4200A10021827D /* GitHubClientTests.swift */,
+				26829D651F49D2930024BA30 /* ModelTests.swift */,
 				26C3FD8D1F4200A10021827D /* Info.plist */,
 				26829D561F49A1C90024BA30 /* Fixture.swift */,
 				26829D581F49A1D90024BA30 /* HTTPStub.swift */,
@@ -703,6 +711,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26829D621F49CA760024BA30 /* GitHubClient.framework in Resources */,
 				26C3FDA21F421D6C0021827D /* users-mojombo.json in Resources */,
 				26C3FD751F41DBA60021827D /* repos-mojombo-grit.json in Resources */,
 				26C3FD731F41DA790021827D /* repositories.json in Resources */,
@@ -781,6 +790,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCheck.framework",
 			);
 			outputPaths = (
 			);
@@ -870,6 +880,7 @@
 				26C3FD8C1F4200A10021827D /* GitHubClientTests.swift in Sources */,
 				26829D571F49A1C90024BA30 /* Fixture.swift in Sources */,
 				26829D591F49A1D90024BA30 /* HTTPStub.swift in Sources */,
+				26829D661F49D2930024BA30 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
