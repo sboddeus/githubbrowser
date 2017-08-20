@@ -15,8 +15,11 @@ public protocol RepoDataSource {
 
 public struct GitHubRepoDataSource: RepoDataSource {
     let baseUrlString = "https://api.github.com"
+    let manager: Alamofire.SessionManager
 
-    public init() {}
+    public init(manager: Alamofire.SessionManager = Alamofire.SessionManager()) {
+       self.manager = manager
+    }
 
     public func fetchPublicRepos(since: String?, completion: @escaping ([Repo]?, Error?) -> ()) {
         var request = "\(baseUrlString)/repositories"
@@ -25,7 +28,7 @@ public struct GitHubRepoDataSource: RepoDataSource {
             request += "?\(since)"
         }
 
-        Alamofire.request(request).responseJSON { (response) in
+        manager.request(request).responseJSON { (response) in
             if let json = response.result.value {
                 do {
                     let repos = try [Repo].decode(json)
@@ -38,7 +41,7 @@ public struct GitHubRepoDataSource: RepoDataSource {
     }
 
     public func fetchRepoDetails(url: URL, completion: @escaping (RepoDetailed?, Error?) -> ()) {
-        Alamofire.request(url).responseJSON { (response) in
+        manager.request(url).responseJSON { (response) in
             if let json = response.result.value {
                 do {
                     let repos = try RepoDetailed.decodeValue(json)

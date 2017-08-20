@@ -13,32 +13,52 @@ import Nimble
 class GitHubClientTests: QuickSpec {
 
     override func spec() {
-        let fixture = GitHubFixture()
+        // Setup Mocking
+        HTTPStub.initializeStub()
+        HTTPStub.shared.stubRequests = { request in
+            return Fixture.fixtureForURL(request.url!)!
+        }
+
+        let dataSource = GitHubRepoDataSource(manager: HTTPStub.HTTPStubManager)
+
+        var repository: RepoDetailed? = nil
+        var repoCollection: [Repo]? = nil
+        var owner: Owner? = nil
+
+        waitUntil { done in
+            dataSource.fetchRepoDetails(url: URL(string: "https://api.github.com/repos/mojombo/grit")!) { (repo, error) in
+                repository = repo
+                owner = repo?.owner
+                done()
+            }
+        }
+
+        waitUntil { done in
+            dataSource.fetchPublicRepos(since: nil) { (repos, error) in
+                repoCollection = repos
+                done()
+            }
+        }
+
         describe("GitHubClientTests") {
             context("publicRepos deserialisation") {
-                let repos = fixture.publicRepos
-
                 it("should deserialise repos") {
-                    expect(repos?.count) == 100
+                    expect(repoCollection?.count) == 100
                 }
             }
             context("detailed repo") {
-                let detailedRepo = fixture.detailedRepo
-
                 it("should deserialise a detailed id") {
-                    expect(detailedRepo?.id) == 1
+                    expect(repository?.id) == 1
                 }
                 it("should deserialise a url") {
-                    expect(detailedRepo?.url) == "https://api.github.com/repos/mojombo/grit"
+                    expect(repository?.url) == "https://api.github.com/repos/mojombo/grit"
                 }
                 it("should deserialise a description") {
-                    expect(detailedRepo?.description) == "**Grit is no longer maintained. Check out libgit2/rugged.** Grit gives you object oriented read/write access to Git repositories via Ruby."
+                    expect(repository?.description) == "**Grit is no longer maintained. Check out libgit2/rugged.** Grit gives you object oriented read/write access to Git repositories via Ruby."
                 }
                 // We should continue testing the remaining elements
             }
             context("owner") {
-                let owner = fixture.owner
-
                 it("should deserialise an id") {
                     expect(owner?.id) == 1
                 }
